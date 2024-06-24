@@ -1,0 +1,159 @@
+:root {
+  --board-line-radius: 2px;
+  --board-line-color: rgb(43, 52, 118);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.game {
+  height: 100vh;
+  background-image: radial-gradient(pink 20%, rgb(100, 100, 235));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-title{
+  position: fixed;
+  top: 35%;
+  left: 10%;
+ 
+  line-height: 50px;
+}
+.rules{
+  position: fixed;
+  /* line-height: 20px; */
+  text-align: left;
+  top: 35%;
+  right: 5%;
+}
+
+.board {
+  background-color: silver;
+  border: var(--board-line-radius) solid var(--board-line-color);
+  background-image: radial-gradient(yellow, green);
+  width: 80%;
+  max-width: 530px;
+  min-width: 200px;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 0px !important;
+  position: relative;
+}
+
+.col-box {
+  border: var(--board-line-radius) solid var(--board-line-color);
+}
+
+.inner-square {
+  position: absolute;
+  width: 71%;
+  aspect-ratio: 1;
+  border: calc(2 * var(--board-line-radius)) solid var(--board-line-color);
+  transform: rotate(45deg);
+  transform-origin: 35.5% 84.8%;
+}
+
+.dignl {
+  position: absolute;
+  width: 141.42%;
+  height: calc(2 * var(--board-line-radius));
+  background-image: radial-gradient(red, yellow);
+  border-radius: 60%;
+}
+
+.main {
+  transform-origin: 0.5%;
+  transform: rotate(45deg);
+}
+
+.rev {
+  top: 99%;
+  transform-origin: 0.5%;
+  transform: rotate(-45deg);
+}
+
+img {
+  max-width: 100%;
+}
+
+.position {
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.selectedPiece {
+  border: 2px solid red;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+#modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: orange;
+  opacity: 0.4;
+}
+
+#modal-box {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 2/1;
+  background-color: white;
+  opacity: 0.9;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20%;
+  border-radius: 10px;
+  max-width: 400px;
+}
+
+#restart {
+  padding: 1% 5%;
+  text-align: center;
+  border: 2px solid green;
+  font-size: 100%;
+  background-color: green;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+#restart:hover {
+  border: 2px solid red;
+}
+
+@media (max-width:1100px){
+  .game-title{
+    visibility: hidden;
+  }
+}
+
+@media (max-width:1250px){
+  .rules{
+    visibility: hidden;
+  }
+}
