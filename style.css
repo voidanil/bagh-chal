@@ -9,7 +9,11 @@
   box-sizing: border-box;
 }
 
-.game {
+body {
+  user-select: none;
+}
+
+.game-container {
   height: 100vh;
   background-image: radial-gradient(pink 20%, rgb(100, 100, 235));
   display: flex;
@@ -17,28 +21,80 @@
   align-items: center;
 }
 
-.game-title{
-  position: fixed;
-  top: 35%;
-  left: 10%;
- 
-  line-height: 50px;
+.game {
+  /* border: 2px solid red; */
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-.rules{
-  position: fixed;
-  /* line-height: 20px; */
-  text-align: left;
-  top: 35%;
-  right: 5%;
+
+.info-section {
+  border: 2px solid black;
+  /* height: 100%; */
+  min-width: 370px;
+  min-height: 330px;
+  padding: 30px 15px;
+}
+
+.game-title {
+  line-height: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.info-nav {
+  border-bottom: 1px solid black;
+  width: 100%;
+  padding: 10px 0px 3px 0px;
+  font-size: larger;
+  font-weight: 700;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item-active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: red;
+  text-underline-offset: 3px;
+}
+
+.info-display {
+  padding: 10px 0px;
+  list-style-position: inside;
+}
+
+.scoreboard td,
+.rules {
+  font-size: 17px;
+  color: blue;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+th {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
 }
 
 .board {
   background-color: silver;
   border: var(--board-line-radius) solid var(--board-line-color);
   background-image: radial-gradient(yellow, green);
-  width: 80%;
-  max-width: 530px;
-  min-width: 200px;
+  height: 100%;
+  max-height: 530px;
+  min-height: 200px;
   aspect-ratio: 1;
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -84,9 +140,10 @@ img {
 
 .position {
   position: absolute;
+  border-radius: 50%;
   width: 10%;
   aspect-ratio: 1;
-  border-radius: 50%;
+  cursor: pointer;
 }
 
 .selectedPiece {
@@ -144,16 +201,4 @@ img {
 
 #restart:hover {
   border: 2px solid red;
-}
-
-@media (max-width:1100px){
-  .game-title{
-    visibility: hidden;
-  }
-}
-
-@media (max-width:1250px){
-  .rules{
-    visibility: hidden;
-  }
 }

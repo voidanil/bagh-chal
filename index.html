@@ -1,59 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://www.svgrepo.com/show/232666/tiger.svg" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://www.svgrepo.com/show/232666/tiger.svg"
+      type="image/x-icon"
+    />
     <title>Bagh-Chal</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-    <div class="game">
-        <div class="game-title">
+  <body>
+    <div class="game-container">
+      <div class="game">
+        <div class="info-section">
+          <div class="game-title">
             <h1><u> Bagh-Chal</u></h1>
-            <p>" <u>Game of Jungle</u> "</p>
-        </div>
-        <div class="rules">
-            <h3><u>Rules</u></h3><br>
-            <p>- Pieces can only move one step along the path</p>
-            <p>- Tiger can jump two step when goat is killed</p>
-            <p>- Tiger must kill 5 goat</p>
-            <p>- Goat must trap all tigers with 20 pieces</p>
-        </div>
-        <div class="board">
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="col-box"></div>
-            <div class="inner-square"></div>
-            <div class="dignl main"></div>
-            <div class="dignl rev"></div>
-        </div>
-        <div id="modal-container">
-            <div class="shadow"></div>
-            <div id="modal-box">
-                <div id="winner"></div>
-                <div id="restart"> Play Again</div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <script type="text/javascript" src="script.js"></script>
-</body>
+            <q> <u>Game of Jungle</u> </q>
+          </div>
 
+          <div class="info-nav">
+            <span
+              class="nav-item nav-item-scoreboard nav-item-active"
+              templateKey="scoreboard"
+              >Scoreboard</span
+            >
+            <span class="nav-item nav-item-rule" templateKey="rule">Rules</span>
+          </div>
+
+          <div class="info-display"></div>
+        </div>
+
+        <div class="board">
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="col-box"></div>
+          <div class="inner-square"></div>
+          <div class="dignl main"></div>
+          <div class="dignl rev"></div>
+        </div>
+
+        <div id="modal-container">
+          <div class="shadow"></div>
+          <div id="modal-box">
+            <div id="winner"></div>
+            <div id="restart">Play Again</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <template key="rule">
+      <div class="rules">
+        <ol>
+          <li>Pieces can only move one step along the path.</li>
+          <li>Tiger jumps two step when goat is killed.</li>
+          <li>Tiger must kill 5 goat.</li>
+          <li>Goat must trap all tigers with 20 pieces.</li>
+        </ol>
+      </div></template
+    >
+
+    <template key="scoreboard">
+      <div class="scoreboard">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Available</th>
+              <th>Captured</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tiger</td>
+              <td class="rem-tiger">4/4</td>
+              <td class="cap-tiger">0</td>
+            </tr>
+            <tr>
+              <td>Goat</td>
+              <td class="rem-goat">20/20</td>
+              <td class="cap-goat">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </template>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
