@@ -200,5 +200,47 @@ img {
 }
 
 #restart:hover {
-  border: 2px solid red;
+  outline: 2px solid red;
+}
+
+@media (max-width: 800px) {
+  .game {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .board {
+    min-height: 300px;
+    height: auto;
+  }
+
+  .position {
+    width: 12%;
+  }
+
+  .info-section {
+    min-width: 100%;
+  }
+
+  .info-nav {
+    font-size: medium;
+  }
+
+  .scoreboard th {
+    font-size: small;
+  }
+
+  .scoreboard td,
+  .rules {
+    font-size: 14px;
+  }
+
+  th {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 1px;
+  }
+
+  #modal-box {
+    width: 80%;
+  }
 }
